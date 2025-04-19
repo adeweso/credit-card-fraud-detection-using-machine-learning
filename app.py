@@ -25,7 +25,7 @@ st.title("Credit Card Fraud Detection System")
 st.text("In my project, I explored the patterns of \nfraudulent credit card transactions using machine learning.")
 
 # Dataset Preview
-st.header("The Online Credit Card Transactions Dataset")
+st.header("The Credit Card Transactions Dataset")
 st.text("I got this dataset from Kaggle.\nIt contains over 280,000 samples and 31 features of online transactions.")
 
 st.subheader("The Dataset's First Five Rows (Head)")

@@ -18,7 +18,7 @@ def get_data(filename):
 
 # Load model and dataset
 model = load_model()
-online_transactions = get_data("creditcard.csv")  # Ensure this file is in your working directory
+online_transactions = get_data("creditcard_head.csv")  # Ensure this file is in your working directory
 
 # Header
 st.title("Credit Card Fraud Detection System")

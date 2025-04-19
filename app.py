@@ -29,7 +29,7 @@ st.header("The Online Credit Card Transactions Dataset")
 st.text("I got this dataset from Kaggle.\nIt contains over 280,000 samples and 31 features of online transactions.")
 
 st.subheader("The Dataset's First Five Rows (Head)")
-st.write(online_transactions.head())
+st.dataframe(online_transactions.head())
 
 
 # Model Prediction

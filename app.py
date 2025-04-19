@@ -31,8 +31,6 @@ st.text("I got this dataset from Kaggle.\nIt contains over 280,000 samples and 3
 st.subheader("The Dataset's First Five Rows (Head)")
 st.write(online_transactions.head())
 
-st.subheader("The Dataset's Last Five Rows (Tail)")
-st.write(online_transactions.tail())
 
 # Model Prediction
 st.subheader("**User's Input**")

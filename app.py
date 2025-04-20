@@ -51,14 +51,17 @@ with model_training:
         val = col.text_input(f"Enter value of V{i+1}", value="0.0", key=f"V{i+1}")
         input_values.append(val)
 
-    if st.button("Predict"):
-        try:
-            input_values = [float(v) for v in input_values]
-            prediction = model.predict([input_values])
-            result = "✅ Normal Transaction" if prediction[0] == 0 else "⚠️ Fraudulent Transaction"
-            st.subheader("Prediction:")
-            st.success(result) if prediction[0] == 0 else st.error(result)
-        except ValueError:
-            st.error("Please enter valid numeric values.")
-        except Exception as e:
-            st.error(f"Error occurred: {e}")
+   if st.button("Predict"):
+    try:
+        input_values = [float(v) for v in input_values]
+        prediction = model.predict([input_values])
+        
+        if prediction[0] == 0:
+            st.success("✅ Normal Transaction")
+        else:
+            st.error("⚠️ Fraudulent Transaction")
+            
+    except ValueError:
+        st.error("Please enter valid numeric values.")
+    except Exception as e:
+        st.error(f"An unexpected error occurred:\n{str(e)}")

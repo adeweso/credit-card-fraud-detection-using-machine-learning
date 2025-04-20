@@ -14,7 +14,7 @@ model_training = st.container()
 # Load model
 @st.cache_data
 def load_model():
-    model = joblib.load("credit card model")  # Ensure this path is correct
+    model = joblib.load("moodel/credit card model")  # Ensure this path is correct
     return model
 
 # Load dataset
@@ -24,7 +24,7 @@ def get_data(filename):
 
 # Load the model and dataset
 model = load_model()
-online_transactions = get_data("creditcard_head.csv")  # Ensure this file exists
+online_transactions = get_data("data/creditcard_head.csv")  # Ensure this file exists
 
 # Header section
 with header:

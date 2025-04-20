@@ -14,7 +14,7 @@ model_training = st.container()
 # Load model
 @st.cache_data
 def load_model():
-    model = joblib.load("moodel/credit card model")  # Ensure this path is correct
+    model = joblib.load("model/credit card model")  # Ensure this path is correct
     return model
 
 # Load dataset

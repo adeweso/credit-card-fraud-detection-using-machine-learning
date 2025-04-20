@@ -37,8 +37,6 @@ with dataset:
     st.text("I got this dataset from Kaggle.\nIt contains over 280,000 samples and 31 features of online transactions.")
     st.subheader("The Dataset's First Five Rows (Head)")
     st.dataframe(online_transactions.head())
-    st.subheader("The Dataset's Last Five Rows (Tail)")
-    st.dataframe(online_transactions.tail())
 
 # Model training (input & prediction) section
 with model_training:

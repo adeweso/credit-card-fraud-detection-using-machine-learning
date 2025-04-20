@@ -52,16 +52,16 @@ with model_training:
         input_values.append(val)
 
    if st.button("Predict"):
-    try:
-        input_values = [float(v) for v in input_values]
-        prediction = model.predict([input_values])
-        
-        if prediction[0] == 0:
-            st.success("✅ Normal Transaction")
-        else:
-            st.error("⚠️ Fraudulent Transaction")
+       try:
+           input_values = [float(v) for v in input_values]
+           prediction = model.predict([input_values])
+           
+           if prediction[0] == 0:
+               st.success("✅ Normal Transaction")
+           else:
+               st.error("⚠️ Fraudulent Transaction")
             
-    except ValueError:
-        st.error("Please enter valid numeric values.")
-    except Exception as e:
-        st.error(f"An unexpected error occurred:\n{str(e)}")
+       except ValueError:
+           st.error("Please enter valid numeric values.")
+       except Exception as e:
+           st.error(f"An unexpected error occurred:\n{str(e)}")

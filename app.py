@@ -14,7 +14,7 @@ model_training = st.container()
 # Load model
 @st.cache_data
 def load_model():
-    model = joblib.load("credit card model")  # Make sure this path is correct
+    model = joblib.load("credit card model")  # Ensure this path is correct
     return model
 
 # Load dataset
@@ -24,7 +24,7 @@ def get_data(filename):
 
 # Load the model and dataset
 model = load_model()
-online_transactions = get_data("creditcard_head.csv")  # Make sure this file exists
+online_transactions = get_data("creditcard_head.csv")  # Ensure this file exists
 
 # Header section
 with header:
@@ -51,17 +51,16 @@ with model_training:
         val = col.text_input(f"Enter value of V{i+1}", value="0.0", key=f"V{i+1}")
         input_values.append(val)
 
-   if st.button("Predict"):
-       try:
-           input_values = [float(v) for v in input_values]
-           prediction = model.predict([input_values])
-           
-           if prediction[0] == 0:
-               st.success("✅ Normal Transaction")
-           else:
-               st.error("⚠️ Fraudulent Transaction")
-            
-       except ValueError:
-           st.error("Please enter valid numeric values.")
-       except Exception as e:
-           st.error(f"An unexpected error occurred:\n{str(e)}")
+    if st.button("Predict"):
+        try:
+            input_values = [float(v) for v in input_values]
+            prediction = model.predict([input_values])
+
+            if prediction[0] == 0:
+                st.success("✅ Normal Transaction")
+            else:
+                st.error("⚠️ Fraudulent Transaction")
+        except ValueError:
+            st.error("Please enter valid numeric values.")
+        except Exception as e:
+            st.error(f"An unexpected error occurred:\n{str(e)}")
